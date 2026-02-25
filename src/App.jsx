@@ -6,14 +6,13 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
   const fetchWeather = async () => {
     if (!city) return;
     setLoading(true);
     try {
+      const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch weather data");

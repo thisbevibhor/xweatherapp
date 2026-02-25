@@ -1,15 +1,18 @@
 body {
   font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
-  background-color: #f0f0f0;
 }
 
 .search-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
@@ -40,12 +43,12 @@ input {
 }
 
 .weather-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   margin-top: 20px;
   width: 100%;
-  max-width: 800px;
 }
 
 .weather-card {
@@ -54,6 +57,7 @@ input {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  min-width: 180px;
 }
 
 .weather-card h3 {
